@@ -62,6 +62,9 @@ public class LicensePlateValidator implements Serializable {
      */
     private static final LicensePlateValidator LICENSE_PLATE_VALIDATOR = new LicensePlateValidator();
 
+    private LicensePlateValidator() {
+    }
+
     /**
      * <p>Returns the singleton instance of this validator.</p>
      *
