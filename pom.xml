@@ -6,7 +6,8 @@
 
     <groupId>com.mk-it-easy</groupId>
     <artifactId>lib-swiss</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.0-alpha-SNAPSHOT</version>
+
     <build>
         <plugins>
             <plugin>
@@ -43,6 +44,14 @@
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub mk-it-easy Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/mk-it-easy/libswiss</url>
+        </repository>
+    </distributionManagement>
 
     <developers>
         <developer>
