@@ -4,6 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <name>LibSwiss</name>
+    <description>A Java library to validate Swiss data patterns.</description>
+    <url>https://github.com/mk-it-easy/libswiss</url>
     <groupId>org.libswiss</groupId>
     <artifactId>libswiss</artifactId>
     <version>0.1.0-alpha-SNAPSHOT</version>
@@ -54,11 +57,25 @@
         </repository>
     </distributionManagement>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
     <developers>
         <developer>
             <name>Martin Kaiser</name>
             <id>mk-it-easy</id>
             <email>14329350+mk-it-easy@users.noreply.github.com</email>
+            <organization>mk-it-easy at GitHub</organization>
+            <organizationUrl>https://github.com/mk-it-easy</organizationUrl>
         </developer>
     </developers>
+    <scm>
+        <connection>scm:git:git://github.com/mk-it-easy/libswiss.git</connection>
+        <developerConnection>scm:git:ssh://github.com:mk-it-easy/libswiss.git</developerConnection>
+        <url>https://github.com/mk-it-easy/libswiss</url>
+    </scm>
 </project>
