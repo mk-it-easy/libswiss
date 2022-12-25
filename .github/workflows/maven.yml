@@ -22,5 +22,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - id: install-secret-key
+      name: Install gpg secret key
+      run: |
+        cat <(echo -e "${{ secrets.SIGNING_GPG_PRIVATE_KEY}}") | gpg --batch --import
+        gpg --list-secret-keys --keyid-format LONG
     - name: Build with Maven
-      run: mvn -B test package --file pom.xml
+      run: mvn -B test package verify --file pom.xml
