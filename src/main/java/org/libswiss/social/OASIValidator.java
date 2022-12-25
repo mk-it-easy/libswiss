@@ -54,11 +54,12 @@ public class OASIValidator {
     }
 
     /**
-    * <p>Checks if a field has a valid OASI number.</p>
-    *
-    * @param oasi The value validation is performed on. A <code>null</code>
-    *                     value is considered invalid.
-    */
+     * <p>Checks if a field has a valid OASI number.</p>
+     *
+     * @param oasi The value validation is performed on. A <code>null</code>
+     *                     value is considered invalid.
+     *@return if the OASI number is valid.
+     */
     public boolean isValid(String oasi) {
         if (oasi == null)
             return false;
