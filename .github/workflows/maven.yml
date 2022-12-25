@@ -28,4 +28,4 @@ jobs:
         echo -e "${{ secrets.SIGNING_GPG_PRIVATE_KEY}}" | base64 --decode | gpg --batch --import
         gpg --list-secret-keys --keyid-format LONG
     - name: Build with Maven
-      run: mvn -B test package verify --file pom.xml
+      run: mvn -B test package verify "-Dsecrets.SIGNING_GPG_KEYNAME=${{ secrets.SIGNING_GPG_KEYNAME }}" "-Dsecrets.SIGNING_GPG_PASSPHRASE= ${{ secrets.SIGNING_GPG_PASSPHRASE }}" --file pom.xml
