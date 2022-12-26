@@ -66,8 +66,8 @@
                             <goal>sign</goal>
                         </goals>
                         <configuration>
-                            <keyname>${security.SIGNING_GPG_KEYNAME}</keyname>
-                            <passphrase>${security.SIGNING_GPG_PASSPHRASE}</passphrase>
+                            <keyname>${secrets.SIGNING_GPG_KEYNAME}</keyname>
+                            <passphrase>${secrets.SIGNING_GPG_PASSPHRASE}</passphrase>
                             <gpgArguments>
                                 <arg>--pinentry-mode</arg>
                                 <arg>loopback</arg>
