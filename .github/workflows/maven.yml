@@ -29,6 +29,6 @@ jobs:
         gpg --list-secret-keys --keyid-format LONG
     - uses: s4u/maven-settings-action@v2.8.0
       with:
-        properties: '[{"secrets.SIGNING_GPG_KEYNAME": "${{ secrets.SIGNING_GPG_KEYNAME }}"}]'
+        properties: '[{"security.SIGNING_GPG_KEYNAME": "${{ security.SIGNING_GPG_KEYNAME }}"}, {"security.SIGNING_GPG_PASSPHRASE": "${{ security.SIGNING_GPG_PASSPHRASE }}"}]'
     - name: Build with Maven
       run: mvn -B test package verify --file pom.xml
