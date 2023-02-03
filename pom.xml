@@ -7,7 +7,7 @@
     <url>https://github.com/mk-it-easy/libswiss</url>
     <groupId>org.libswiss</groupId>
     <artifactId>libswiss</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <build>
         <plugins>
@@ -147,6 +147,6 @@
         <connection>scm:git:git://github.com/mk-it-easy/libswiss.git</connection>
         <developerConnection>scm:git:ssh://github.com/mk-it-easy/libswiss.git</developerConnection>
         <url>https://github.com/mk-it-easy/libswiss</url>
-      <tag>libswiss-1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
