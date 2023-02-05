@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set env
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - name: Set up JDK 11
         uses: actions/setup-java@v3
         with:
@@ -51,9 +49,7 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
       - name: Create release branch
-        run: git switch -c release-$RELEASE_VERSION
-        env:
-          RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
+        run: git switch -c release
       - name: Build with Maven
         run: mvn -B test package --file pom.xml
       - name: Publish Package
