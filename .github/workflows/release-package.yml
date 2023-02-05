@@ -24,7 +24,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B test package --file pom.xml
 
-  publish-gpr:
+  publish-github:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -52,6 +52,8 @@ jobs:
           git config user.name "GitHub Actions"
       - name: Create release branch
         run: git switch -c release-$RELEASE_VERSION
+        env:
+          RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
       - name: Build with Maven
         run: mvn -B test package --file pom.xml
       - name: Publish Package
