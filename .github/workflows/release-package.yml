@@ -51,6 +51,6 @@ jobs:
       - name: Build with Maven
         run: mvn -B test package --file pom.xml
       - name: Publish Package
-        run: mvnw -B release:prepare release:perform
+        run: ./mvnw -B release:prepare release:perform
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
