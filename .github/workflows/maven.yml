@@ -31,4 +31,4 @@ jobs:
       with:
         properties: '[{"secrets.SIGNING_GPG_KEYNAME": "${{ secrets.SIGNING_GPG_KEYNAME }}"}, {"secrets.SIGNING_GPG_PASSPHRASE": "${{ secrets.SIGNING_GPG_PASSPHRASE }}"}]'
     - name: Build with Maven
-      run: mvn -B test package verify --file pom.xml
+      run: mvn -B verify --file pom.xml
