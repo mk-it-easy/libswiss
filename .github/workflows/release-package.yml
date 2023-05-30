@@ -27,7 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       packages: write
-      contents: read
+      contents: write
+      repository-projects: write
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
