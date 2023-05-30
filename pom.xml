@@ -146,7 +146,7 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:https://github.com/mk-it-easy/libswiss.git</connection>
+        <connection>scm:git:git://github.com/mk-it-easy/libswiss.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/mk-it-easy/libswiss.git</developerConnection>
         <url>https://github.com/mk-it-easy/libswiss</url>
     </scm>
