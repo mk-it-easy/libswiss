@@ -54,10 +54,8 @@ jobs:
           git config user.name "GitHub Actions"
       - name: Create release branch
         run: git switch -c release
-      - name: Build with Maven
-        run: mvn -B test package --file pom.xml
       - name: Publish Package
-        run: ./mvnw -X -B release:prepare release:perform
+        run: ./mvnw -B release:prepare release:perform
         env:
           OSSRH_MAVEN_USERNAME: ${{ secrets.OSSRH_MAVEN_USERNAME }}
           OSSRH_MAVEN_PASSWORD: ${{ secrets.OSSRH_MAVEN_TOKEN }}
