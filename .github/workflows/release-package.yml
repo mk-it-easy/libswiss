@@ -37,6 +37,9 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
+          server-id: ossrh
+          server-username: OSSRH_MAVEN_USERNAME
+          server-password: OSSRH_MAVEN_PASSWORD
       - id: install-secret-key
         name: Install gpg secret key
         run: |
@@ -56,4 +59,6 @@ jobs:
       - name: Publish Package
         run: ./mvnw -B release:prepare release:perform
         env:
+          OSSRH_MAVEN_USERNAME: ${{ secrets.OSSRH_MAVEN_USERNAME }}
+          OSSRH_MAVEN_PASSWORD: ${{ secrets.OSSRH_MAVEN_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
