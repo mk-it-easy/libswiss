@@ -55,7 +55,7 @@ jobs:
       - name: Create release branch
         run: git switch -c release
       - name: Publish Package
-        run: ./mvnw -B release:prepare release:perform
+        run: ./mvnw -B release:prepare release:perform -DskipLocalStaging
         env:
           OSSRH_MAVEN_USERNAME: ${{ secrets.OSSRH_MAVEN_USERNAME }}
           OSSRH_MAVEN_PASSWORD: ${{ secrets.OSSRH_MAVEN_TOKEN }}
