@@ -35,7 +35,7 @@ Celebrate your success after your pull request is merged!
 
 # Where can I go for help?
 
-If you need help, you can ask questions at https://github.com/mk-it-easy/libswiss/discussions.
+If you need help, you can ask questions to the maintainers.
 
 # What does the Code of Conduct mean for me?
 
