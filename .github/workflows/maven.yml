@@ -28,9 +28,10 @@ jobs:
         echo -e "${{ secrets.SIGNING_GPG_PRIVATE_KEY}}" | base64 --decode | gpg --batch --import
         gpg --list-secret-keys --keyid-format LONG
     - uses: s4u/maven-settings-action@v2.8.0
-      env: 
-        MAVEN_GPG_PASSPHRASE: "${{ secrets.SIGNING_GPG_PASSPHRASE }}"
       with:
         properties: '[{"secrets.SIGNING_GPG_KEYNAME": "${{ secrets.SIGNING_GPG_KEYNAME }}"}]'
     - name: Build with Maven
+      env: 
+        MAVEN_GPG_PASSPHRASE: "${{ secrets.SIGNING_GPG_PASSPHRASE }}"
       run: mvn -B verify --file pom.xml
+      
