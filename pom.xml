@@ -9,7 +9,7 @@
     <url>https://github.com/mk-it-easy/libswiss</url>
     <groupId>org.libswiss</groupId>
     <artifactId>libswiss</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
 
     <build>
         <plugins>
