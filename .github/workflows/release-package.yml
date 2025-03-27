@@ -61,13 +61,12 @@ jobs:
           OSSRH_MAVEN_PASSWORD: ${{ secrets.OSSRH_MAVEN_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
- 
   publish-to-maven-central:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v4
         with:
@@ -78,6 +77,7 @@ jobs:
           server-password: MAVEN_CENTRAL_PASSWORD
           gpg-private-key: MAVEN_GPG_PRIVATE_KEY
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
       - name: Set version
         run: mvn versions:set -DnewVersion=${{ github.event.release.tag_name }}
       - name: Publish package
@@ -87,3 +87,4 @@ jobs:
           MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.SIGNING_GPG_PASSPHRASE }}
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.SIGNING_GPG_PRIVATE_KEY }}
+
