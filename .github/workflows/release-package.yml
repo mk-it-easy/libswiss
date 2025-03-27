@@ -23,7 +23,7 @@ jobs:
         run: mvn -B test package --file pom.xml
 
   publish-github:
-    needs: build
+    needs: publish-to-maven-central
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -66,11 +66,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - id: install-secret-key
-        name: Install gpg secret key
-        run: |
-          echo -e "${{ secrets.SIGNING_GPG_PRIVATE_KEY}}" | base64 --decode | gpg --batch --import
-          gpg --list-secret-keys --keyid-format LONG
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v4
         with:
@@ -79,7 +74,7 @@ jobs:
           server-id: central
           server-username: MAVEN_CENTRAL_USERNAME
           server-password: MAVEN_CENTRAL_PASSWORD
-          gpg-private-key: ${{ secrets.SIGNING_GPG_PRIVATE_KEY }}
+          gpg-private-key: MAVEN_GPG_PASSPHRASE
           gpg-passphrase: ${{ secrets.SIGNING_GPG_PASSPHRASE }}
       - name: Set version
         run: mvn versions:set -DnewVersion=${{ github.event.release.tag_name }}
